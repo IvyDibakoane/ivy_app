@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.1.1'
 gem 'bootstrap-sass', '2.0.0'
+gem 'bcrypt-ruby', '3.0.1'
 
 gem 'rails', '3.1.1'
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -33,8 +36,18 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :development do
+  gem 'sqlite3'
+  gem 'rspec-rails', '2.9.0'
+  gem 'annotate', '~> 2.4.1.beta'
+ # gem 'cucumber-rails','1.2.1'
+end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'factory_girl_rails', '1.4.0'
+  #gem 'cucumber-rails', '1.2.1'
+  gem 'database_cleaner', '0.7.0'
+
 end

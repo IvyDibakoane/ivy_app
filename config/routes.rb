@@ -1,4 +1,8 @@
 IvyApp::Application.routes.draw do
+  get "users/new"
+
+  get "users/new"
+
   get "static_pages/home"
 
   get "static_pages/help"
@@ -7,17 +11,15 @@ IvyApp::Application.routes.draw do
 
   get "static_pages/contact"
 
-  ivy_App::Application.routes.draw do
-    root to: 'static_pages#home'
-
-    match '/help',    to: 'static_pages#help'
-    match '/about',   to: 'static_pages#about'
-    match '/contact', to: 'static_pages#contact'
+  get "users/signUp"
 
 
-    resources :microposts
+  resources :microposts
 
-  resources :users
+
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -75,4 +77,22 @@ IvyApp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  IvyApp::Application.routes.draw do
+    resources :users
+    get "users/new"
+
+  #get "users/new"
+
+    root to: 'static_pages#home'
+    resources :sessions, only: [:new, :create, :destroy]
+
+
+    match '/help',    to: 'static_pages#help'
+    match '/about',   to: 'static_pages#about'
+    match '/contact', to: 'static_pages#contact'
+    match '/signUp', to: 'users#signUp'
+    match '/signup',  to: 'users#new'
+    match '/signin',  to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+  end
 end

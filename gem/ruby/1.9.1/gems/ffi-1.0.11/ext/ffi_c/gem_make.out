@@ -1,0 +1,18 @@
+C:/RailsInstaller/Ruby1.9.2/bin/ruby.exe extconf.rb 
+checking for ffi.h... no
+checking for ffi.h in /usr/local/include... no
+checking for rb_thread_blocking_region()... yes
+checking for ruby_thread_has_gvl_p()... yes
+checking for ruby_native_thread_p()... yes
+checking for rb_thread_call_with_gvl()... yes
+creating extconf.h
+creating Makefile
+
+make
+C:/RailsInstaller/Ruby1.9.2/bin/ruby -e "puts 'EXPORTS', 'Init_ffi_c'"  > ffi_c-i386-mingw32.def
+Configuring libffi
+sed: can't read include/Makefile.in: No such file or directory
+./config.status: line 1279: ./conf7176-15352/out: No such file or directory
+sed: can't read include/Makefile.in: No such file or directory
+config.status: error: could not create include/Makefile
+make: *** ["/c/Sites/ivy_app/gem/ruby/1.9.1/gems/ffi-1.0.11/ext/ffi_c/libffi"/.libs/libffi_convenience.a] Error 1
